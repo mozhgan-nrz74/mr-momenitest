@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+// import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+// import ConstructionList from './pages/ConstructionList';
+// import ConstructionInfo from './pages/ConstructionInfo';
+
+// function App() {
+//   return (
+//       <Router>
+//         <Routes>
+          
+//       <Route path='/constructionList' element={<ConstructionList/>}/>
+//       <Route path='/constructionInfo' element={<ConstructionInfo/>}/>
+
+   
+//         </Routes>
+//       </Router>
+//   );
+// }
+
+// export default App;
+
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ConstructionList from './pages/ConstructionList';
+import ConstructionInfo from './pages/ConstructionInfo';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ return (
+   <Router>
+     <Routes>
+       {/* Render ConstructionList directly at the root path */}
+       <Route path='/' element={<ConstructionList />} />
+       <Route path='/constructionList' element={<ConstructionList />} />
+       <Route path='/constructionInfo' element={<ConstructionInfo />} />
+     </Routes>
+   </Router>
+ );
 }
 
 export default App;
